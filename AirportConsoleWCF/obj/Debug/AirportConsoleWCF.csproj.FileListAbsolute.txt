@@ -1,0 +1,7 @@
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\obj\Debug\AirportConsoleWCF.csprojAssemblyReference.cache
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\obj\Debug\AirportConsoleWCF.csproj.CoreCompileInputs.cache
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\bin\Debug\AirportConsoleWCF.exe.config
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\bin\Debug\AirportConsoleWCF.exe
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\bin\Debug\AirportConsoleWCF.pdb
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\obj\Debug\AirportConsoleWCF.exe
+C:\Users\Przemek\Documents\Visual Studio 2017\Projects\AirportConsoleWCF\AirportConsoleWCF\obj\Debug\AirportConsoleWCF.pdb
