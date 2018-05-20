@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:8000/AirportConsoleWCF/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="08e345cd-4db1-4979-a28e-cea9443fa94f" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?wsdl=wsdl0" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="277c53d1-11b7-405a-a37d-92d3f4e2a034" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd1" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a6d03578-be51-4f18-8717-df847c4f4b90" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="507be333-fe99-44b6-8024-f38d5138d19a" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd2" />
     <MetadataFile FileName="AirportService.wsdl" MetadataType="Wsdl" ID="f2a7d289-e1cd-40c8-bb1a-842489ee528c" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?wsdl" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5c6c0e09-d1e8-40ec-a918-07e9bf9fe5cf" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?disco" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="08e345cd-4db1-4979-a28e-cea9443fa94f" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

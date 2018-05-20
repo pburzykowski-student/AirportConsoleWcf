@@ -13,6 +13,11 @@ namespace AirportClientConsoleWCF
         {
             AirportServiceClient client = new AirportServiceClient();
             Console.WriteLine(client.SayHello());
+            Console.WriteLine();
+
+            Timetable timetable = new Timetable();
+            timetable.AddConnections(client.GetConnections("CityA", "CityD"));
+            timetable.Show();
 
             Console.ReadKey();
             client.Close();

@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirportService.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ConnectionSearchEngine.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="CustomException\ConnectionNotFoundException.cs" />
     <Compile Include="IAirportService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +60,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="database.csv" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

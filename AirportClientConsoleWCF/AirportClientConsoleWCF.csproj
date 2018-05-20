@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AirportConsoleWCF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -52,10 +53,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timetable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AirportServiceReference\AirportClientConsoleWCF.AirportServiceReference.Connection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AirportServiceReference\AirportService.wsdl" />
     <None Include="Connected Services\AirportServiceReference\item.wsdl" />
@@ -65,6 +70,7 @@
     <None Include="Connected Services\AirportServiceReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\AirportConsoleWCF.Connection.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AirportConsoleWCF\AirportHostConsoleWCF.csproj">
@@ -88,6 +94,9 @@
     <None Include="Connected Services\AirportServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\AirportServiceReference\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AirportServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

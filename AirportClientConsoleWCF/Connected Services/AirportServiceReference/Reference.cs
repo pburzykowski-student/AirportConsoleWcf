@@ -9,7 +9,102 @@
 //------------------------------------------------------------------------------
 
 namespace AirportClientConsoleWCF.AirportServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Connection", Namespace="http://schemas.datacontract.org/2004/07/AirportConsoleWCF")]
+    [System.SerializableAttribute()]
+    public partial class Connection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan ArrivalTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DestinationCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FromCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StartTimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan ArrivalTime {
+            get {
+                return this.ArrivalTimeField;
+            }
+            set {
+                if ((this.ArrivalTimeField.Equals(value) != true)) {
+                    this.ArrivalTimeField = value;
+                    this.RaisePropertyChanged("ArrivalTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DestinationCity {
+            get {
+                return this.DestinationCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DestinationCityField, value) != true)) {
+                    this.DestinationCityField = value;
+                    this.RaisePropertyChanged("DestinationCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FromCity {
+            get {
+                return this.FromCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FromCityField, value) != true)) {
+                    this.FromCityField = value;
+                    this.RaisePropertyChanged("FromCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="AirportServiceReference.IAirportService")]
@@ -20,6 +115,24 @@ namespace AirportClientConsoleWCF.AirportServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/SayHello", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/SayHelloResponse")]
         System.Threading.Tasks.Task<string> SayHelloAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnection", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionResponse")]
+        AirportClientConsoleWCF.AirportServiceReference.Connection GetConnection(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnection", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionResponse")]
+        System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection> GetConnectionAsync(int number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetAllConnections", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetAllConnectionsResponse")]
+        AirportClientConsoleWCF.AirportServiceReference.Connection[] GetAllConnections();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetAllConnections", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetAllConnectionsResponse")]
+        System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection[]> GetAllConnectionsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnections", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionsResponse")]
+        AirportClientConsoleWCF.AirportServiceReference.Connection[] GetConnections(string fromCity, string destinationCity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnections", ReplyAction="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionsResponse")]
+        System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection[]> GetConnectionsAsync(string fromCity, string destinationCity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +168,30 @@ namespace AirportClientConsoleWCF.AirportServiceReference {
         
         public System.Threading.Tasks.Task<string> SayHelloAsync() {
             return base.Channel.SayHelloAsync();
+        }
+        
+        public AirportClientConsoleWCF.AirportServiceReference.Connection GetConnection(int number) {
+            return base.Channel.GetConnection(number);
+        }
+        
+        public System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection> GetConnectionAsync(int number) {
+            return base.Channel.GetConnectionAsync(number);
+        }
+        
+        public AirportClientConsoleWCF.AirportServiceReference.Connection[] GetAllConnections() {
+            return base.Channel.GetAllConnections();
+        }
+        
+        public System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection[]> GetAllConnectionsAsync() {
+            return base.Channel.GetAllConnectionsAsync();
+        }
+        
+        public AirportClientConsoleWCF.AirportServiceReference.Connection[] GetConnections(string fromCity, string destinationCity) {
+            return base.Channel.GetConnections(fromCity, destinationCity);
+        }
+        
+        public System.Threading.Tasks.Task<AirportClientConsoleWCF.AirportServiceReference.Connection[]> GetConnectionsAsync(string fromCity, string destinationCity) {
+            return base.Channel.GetConnectionsAsync(fromCity, destinationCity);
         }
     }
 }
