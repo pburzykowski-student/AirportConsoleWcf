@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://Microsoft.ServiceModel.Samples" elementFormDefault="qualified" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/AirportConsoleWCF" />
+  <xs:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="SayHello">
     <xs:complexType>
       <xs:sequence />
@@ -44,13 +45,15 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="fromCity" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="destinationCity" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="departureTime" type="q3:duration" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="arrivalTime" type="q4:duration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetConnectionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AirportConsoleWCF" minOccurs="0" name="GetConnectionsResult" nillable="true" type="q3:ArrayOfConnection" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AirportConsoleWCF" minOccurs="0" name="GetConnectionsResult" nillable="true" type="q5:ArrayOfConnection" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

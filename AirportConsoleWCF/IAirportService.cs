@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using CustomException;
 
 namespace AirportConsoleWCF
 {
@@ -21,6 +22,7 @@ namespace AirportConsoleWCF
         List<Connection> GetAllConnections();
 
         [OperationContract]
-        List<Connection> GetConnections(String fromCity, String destinationCity);
+        [FaultContract(typeof(ConnectionNotFoundFault))]
+        List<Connection> GetConnections(String fromCity, String destinationCity, TimeSpan departureTime, TimeSpan arrivalTime);
     }
 }

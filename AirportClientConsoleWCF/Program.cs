@@ -1,9 +1,6 @@
 using AirportClientConsoleWCF.AirportServiceReference;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 
 namespace AirportClientConsoleWCF
 {
@@ -12,12 +9,23 @@ namespace AirportClientConsoleWCF
         static void Main(string[] args)
         {
             AirportServiceClient client = new AirportServiceClient();
+            
             Console.WriteLine(client.SayHello());
             Console.WriteLine();
 
-            Timetable timetable = new Timetable();
-            timetable.AddConnections(client.GetConnections("CityA", "CityD"));
-            timetable.Show();
+            
+
+            try
+            {
+                Timetable timetable = new Timetable();
+                timetable.AddConnections(client.GetConnections("CityA", "CityE", TimeSpan.Parse("7:31"), TimeSpan.Parse("7:32")));
+                timetable.Show();
+            }
+            catch (FaultException <ConnectionNotFoundFault> fault)
+            {
+                Console.WriteLine(fault.Detail.Message);
+            }
+
 
             Console.ReadKey();
             client.Close();

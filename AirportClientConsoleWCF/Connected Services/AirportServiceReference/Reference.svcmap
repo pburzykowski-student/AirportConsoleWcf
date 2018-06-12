@@ -24,6 +24,7 @@
   <Metadata>
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="277c53d1-11b7-405a-a37d-92d3f4e2a034" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd1" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a6d03578-be51-4f18-8717-df847c4f4b90" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="b30caa49-565e-4b44-97ca-8ab493c1a1de" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd3" />
     <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="507be333-fe99-44b6-8024-f38d5138d19a" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?xsd=xsd2" />
     <MetadataFile FileName="AirportService.wsdl" MetadataType="Wsdl" ID="f2a7d289-e1cd-40c8-bb1a-842489ee528c" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?wsdl" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="5c6c0e09-d1e8-40ec-a918-07e9bf9fe5cf" SourceId="1" SourceUrl="http://localhost:8000/AirportConsoleWCF/?disco" />

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd2" namespace="http://Microsoft.ServiceModel.Samples" />
       <xsd:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/AirportConsoleWCF" />
+      <xsd:import schemaLocation="http://localhost:8000/AirportConsoleWCF/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CustomException" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAirportService_SayHello_InputMessage">
@@ -31,6 +32,9 @@
   <wsdl:message name="IAirportService_GetConnections_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConnectionsResponse" />
   </wsdl:message>
+  <wsdl:message name="IAirportService_GetConnections_ConnectionNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/CustomException" name="detail" element="q1:ConnectionNotFoundFault" />
+  </wsdl:message>
   <wsdl:portType name="IAirportService">
     <wsdl:operation name="SayHello">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IAirportService/SayHello" message="tns:IAirportService_SayHello_InputMessage" />
@@ -47,6 +51,7 @@
     <wsdl:operation name="GetConnections">
       <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnections" message="tns:IAirportService_GetConnections_InputMessage" />
       <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionsResponse" message="tns:IAirportService_GetConnections_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://Microsoft.ServiceModel.Samples/IAirportService/GetConnectionsConnectionNotFoundFaultFault" name="ConnectionNotFoundFaultFault" message="tns:IAirportService_GetConnections_ConnectionNotFoundFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

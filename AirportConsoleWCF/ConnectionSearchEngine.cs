@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace AirportConsoleWCF
 {
@@ -12,9 +13,15 @@ namespace AirportConsoleWCF
             _database = database;
         }
 
-        public List<Connection> SearchConnection(String fromCity, String destinationCity)
+        public Boolean CheckTimeRange(TimeSpan timeFrom, TimeSpan timeTo, TimeSpan check)
+        {
+            return timeFrom < check && check < timeTo;
+        }
+
+        public List<Connection> SearchConnection(String fromCity, String destinationCity, TimeSpan departureTime, TimeSpan arrivalTime)
         {
             List<Connection> connections = new List<Connection>(_database.Connections);
+
 
             foreach (var c in connections)
             {
@@ -60,6 +67,17 @@ namespace AirportConsoleWCF
                 Console.WriteLine(connection.DestinationCity);
                 Console.WriteLine(destinationCity);
                 Console.WriteLine("======");
+
+                if (departureTime > connection.StartTime)
+                {
+                    continue;
+                }
+
+                if (arrivalTime < connection.ArrivalTime)
+                {
+                    continue;
+                }
+
                 if (connection.DestinationCity.Equals(destinationCity))
                 {
                     return searchConnections; 

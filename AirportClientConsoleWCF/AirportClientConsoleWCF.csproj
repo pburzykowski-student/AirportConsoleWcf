@@ -70,6 +70,9 @@
     <None Include="Connected Services\AirportServiceReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\AirportServiceReference\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\AirportConsoleWCF.Connection.datasource" />
   </ItemGroup>
   <ItemGroup>
